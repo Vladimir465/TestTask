@@ -1,0 +1,7 @@
+E:\1.GameProg\Visual Studio 2019\TextQuests\TextQuests\bin\Debug\TextQuests.exe.config
+E:\1.GameProg\Visual Studio 2019\TextQuests\TextQuests\bin\Debug\TextQuests.exe
+E:\1.GameProg\Visual Studio 2019\TextQuests\TextQuests\bin\Debug\TextQuests.pdb
+E:\1.GameProg\Visual Studio 2019\TextQuests\TextQuests\obj\Debug\TextQuests.csprojAssemblyReference.cache
+E:\1.GameProg\Visual Studio 2019\TextQuests\TextQuests\obj\Debug\TextQuests.csproj.CoreCompileInputs.cache
+E:\1.GameProg\Visual Studio 2019\TextQuests\TextQuests\obj\Debug\TextQuests.exe
+E:\1.GameProg\Visual Studio 2019\TextQuests\TextQuests\obj\Debug\TextQuests.pdb
