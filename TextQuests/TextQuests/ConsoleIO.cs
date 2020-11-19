@@ -23,7 +23,7 @@ namespace TextQuests
 		/// </summary>
 		public void Handle()
 		{
-			Console.Write("Нажмите ");
+			Console.Write("Выберите действие: ");
 			for (int i = 0; i < commands.Length; i++)
 			{
 				Console.Write((i + 1) + ", ");

@@ -4,13 +4,10 @@
 	{
 		static void Main(string[] args)
 		{
-			Room room = new Room("Путник, я тебе передаю медальон и 50 монет\n","...\n","Местность описана\n");
-			IAction[] actions = new IAction[2] {new Talk(room), new Exploration(room)};
-			Game game = new Game(actions);
-			ConsoleIO console = new ConsoleIO(game);
-			room.Output = console;
-			game.Input = console;
-
+			Room road = new Room("Путник, я тебе передаю медальон и 50 монет\n","...\n","Вы видите перед собой дорогу и бродягу\n");
+			IAction[] actions = new IAction[2] {new Talk(road), new Exploration(road) };
+			Game game = new GameTest(actions, road);
+			
 			game.Run();
 		}
 	}
