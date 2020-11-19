@@ -1,26 +1,40 @@
 ﻿namespace TextQuests
 {
-	abstract class Game
+	class Game : IEventHandler
 	{
 		bool isExit = false;
+		IAction[] action;
 
-		protected void Exit()
+		public IInput Input { get; set; }
+
+		public Game(IAction[] action)
 		{
-			isExit = true;
-			ExitInfo();
+			this.action = action;
 		}
 
 		public void Run()
 		{
 			while (!isExit)
 			{
-				Info();
-				Handle();
+				Input.NumberOfRequests(action.Length);
+
+				for (int i = 0; i < action.Length; i++)
+				{
+					Input.ShowCases(i+1, action[i].Info());
+				}
+
+				Input.Handle();
 			}
 		}
 
-		protected abstract void ExitInfo();
-		protected abstract void Info();
-		protected abstract void Handle();
+		public void Exit()
+		{
+			isExit = true;
+		}
+
+		public void Act(int actionID)
+		{
+			action[actionID-1].Act();
+		}
 	}
 }

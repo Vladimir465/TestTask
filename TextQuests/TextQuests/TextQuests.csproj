@@ -43,13 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsoleIO.cs" />
+    <Compile Include="Exploration.cs" />
+    <Compile Include="IAction.cs" />
+    <Compile Include="IEventHandler.cs" />
     <Compile Include="Game.cs" />
-    <Compile Include="GameText.cs" />
+    <Compile Include="IInput.cs" />
+    <Compile Include="IOutput.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RoadInteraction.cs" />
-    <Compile Include="RoadInteractionText.cs" />
-    <Compile Include="Rooms.cs" />
+    <Compile Include="Room.cs" />
+    <Compile Include="Talk.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
