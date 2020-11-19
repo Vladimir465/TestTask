@@ -2,11 +2,15 @@
 
 namespace TextQuests
 {
+	/// <summary>
+	/// Реализация ввода и вывода через консоль
+	/// </summary>
 	class ConsoleIO : IInput, IOutput
 	{
 		IEventHandler handler;
 		string[] commands;
 		int answer;
+		int lastCommandID;
 		bool err;
 
 		public ConsoleIO(IEventHandler handler)
@@ -14,22 +18,21 @@ namespace TextQuests
 			this.handler = handler;
 		}
 
+		/// <summary>
+		/// Ожидание ввода игрока
+		/// </summary>
 		public void Handle()
 		{
 			Console.Write("Нажмите ");
 			for (int i = 0; i < commands.Length; i++)
 			{
-				if (commands[i] == null)
-					break;
 				Console.Write((i + 1) + ", ");
 			}
 			Console.WriteLine(commands.Length + 1);
 
 
 			for (int i = 0; i < commands.Length; i++)
-			{				
-				if (commands[i] == null)
-					break;
+			{
 				Console.WriteLine($"{i + 1} - {commands[i]}");
 			}
 			Console.WriteLine($"{commands.Length + 1} - Уйти");
@@ -37,8 +40,7 @@ namespace TextQuests
 
 			err = !int.TryParse(Console.ReadLine(), out answer);
 			err |= answer > (commands.Length + 1);
-			err |= answer < 0;
-			//err |= (commands[answer - 1] == string.Empty);
+			err |= answer <= 0;
 
 			if (err)
 				Console.WriteLine("Вы ввели неверное значение, попробуйте снова");
@@ -48,16 +50,30 @@ namespace TextQuests
 				handler.Act(answer);
 		}
 
-		public void NumberOfRequests(int namber)
+		/// <summary>
+		/// Сброс массива
+		/// </summary>
+		/// <param name="number"></param>
+		public void NumberOfRequests(int number)
 		{
-			commands = new string[namber];
+			commands = new string[number];
+			lastCommandID = 0;
 		}
 
-		public void ShowCases(int number, string showCases)
+		/// <summary>
+		/// Формирование нужных вариантов ответа
+		/// </summary>
+		/// <param name="number"></param>
+		/// <param name="showCases"></param>
+		public void ShowCases(string showCases)
 		{
-			commands[number - 1] = showCases;
+			commands[lastCommandID++] = showCases;
 		}
 
+		/// <summary>
+		/// Выдать текст
+		/// </summary>
+		/// <param name="write"></param>
 		public void Write(string write)
 		{
 			Console.WriteLine(write);

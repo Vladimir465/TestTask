@@ -4,7 +4,7 @@
 	{
 		static void Main(string[] args)
 		{
-			Room room = new Room("Путник, я тебе передаю медальон и 50 монет\n","...\n","Местность описана\n", false);
+			Room room = new Room("Путник, я тебе передаю медальон и 50 монет\n","...\n","Местность описана\n");
 			IAction[] actions = new IAction[2] {new Talk(room), new Exploration(room)};
 			Game game = new Game(actions);
 			ConsoleIO console = new ConsoleIO(game);

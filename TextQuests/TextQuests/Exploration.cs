@@ -1,5 +1,8 @@
 ﻿namespace TextQuests
 {
+	/// <summary>
+	/// Определяет действие - Осмотр территории 
+	/// </summary>
 	class Exploration : IAction
 	{
 		Room room;

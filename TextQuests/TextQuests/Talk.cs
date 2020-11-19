@@ -1,5 +1,8 @@
 ﻿namespace TextQuests
 {
+	/// <summary>
+	/// Определяет действие - Разговор
+	/// </summary>
 	class Talk : IAction
 	{
 		Room room;
